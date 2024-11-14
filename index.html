@@ -1,22 +1,306 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple HTML Page</title>
+    <title>张三的简历</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f3f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+        .contact-info {
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .contact-info span {
+            margin: 0 15px;
+            display: flex;
+            align-items: center;
+        }
+        .contact-info i {
+            margin-right: 5px;
+        }
+        main {
+            padding: 40px;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+        .date {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill {
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: transform 0.2s;
+        }
+        .skill:hover {
+            transform: scale(1.05);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .page-break {
+            page-break-before: always;
+            margin-top: 50px;
+        }
+        @media print {
+            .container {
+                box-shadow: none;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+            }
+            .contact-info span {
+                margin: 5px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Simple HTML Page</h1>
-    </header>
-    <main>
-        <p>This is a basic HTML structure. You can add more content here.</p>
-    </main>
-    <footer>
-        <p>&copy; 2023 Simple HTML Page. All rights reserved.</p>
-    </footer>
-    <!-- 写一个h1 -->
-    
-    <h1>这是一个h1标签</h1>
+    <div class="container">
+        <header>
+            <h1>张三</h1>
+            <p class="tagline">高级软件工程师 | 全栈开发专家</p>
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> 123-456-7890</span>
+                <span><i class="fas fa-envelope"></i> zhangsan@email.com</span>
+                <span><i class="fas fa-map-marker-alt"></i> 北京市朝阳区</span>
+                <span><i class="fab fa-linkedin"></i> linkedin.com/in/zhangsan</span>
+                <span><i class="fab fa-github"></i> github.com/zhangsan</span>
+            </div>
+        </header>
+        
+        <main>
+            <section>
+                <h2>个人简介</h2>
+                <p>拥有8年软件开发经验的全栈工程师，专注于Web应用和移动应用开发。擅长使用现代JavaScript框架和云计算技术构建高性能、可扩展的应用程序。具有强大的问题解决能力和团队领导经验，能够在快节奏的开发环境中有效管理多个项目。热衷于新技术学习和创新，致力于开发用户友好且高效的软件解决方案。</p>
+            </section>
+            
+            <section>
+                <h2>工作经验</h2>
+                <div class="experience-item">
+                    <h3>高级软件工程师</h3>
+                    <p class="date">ABC科技有限公司 | 2018年6月 - 至今</p>
+                    <ul>
+                        <li>领导10人开发团队，成功交付5个大型Web项目，客户满意度达95%</li>
+                        <li>设计和实现微服务架构，提高系统可扩展性和可维护性</li>
+                        <li>优化代码结构和数据库查询，使应用响应时间减少40%</li>
+                        <li>实施DevOps实践，将部署周期从每月一次提高到每周三次</li>
+                        <li>指导初级开发人员，组织技术分享会，提高团队整体技能水平</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>软件工程师</h3>
+                    <p class="date">XYZ信息技术有限公司 | 2015年7月 - 2018年5月</p>
+                    <ul>
+                        <li>作为全栈开发者，参与开发公司核心产品的前端和后端</li>
+                        <li>使用React和Node.js重构遗留系统，提高代码可维护性</li>
+                        <li>实现响应式设计，提升移动端用户体验，增加移动用户活跃度30%</li>
+                        <li>编写单元测试和集成测试，将代码覆盖率提高到85%以上</li>
+                        <li>优化网站SEO，使有机搜索流量增加50%</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section>
+                <h2>技能专长</h2>
+                <div class="skills">
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">TypeScript</span>
+                    <span class="skill">React</span>
+                    <span class="skill">Vue.js</span>
+                    <span class="skill">Node.js</span>
+                    <span class="skill">Express</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">Django</span>
+                    <span class="skill">RESTful API</span>
+                    <span class="skill">GraphQL</span>
+                    <span class="skill">MySQL</span>
+                    <span class="skill">MongoDB</span>
+                    <span class="skill">Redis</span>
+                    <span class="skill">Docker</span>
+                    <span class="skill">Kubernetes</span>
+                    <span class="skill">AWS</span>
+                    <span class="skill">CI/CD</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">Agile/Scrum</span>
+                </div>
+            </section>
+
+            <div class="page-break"></div>
+
+            <section>
+                <h2>项目经验</h2>
+                <div class="project-item">
+                    <h3>企业级电子商务平台重构</h3>
+                    <p class="date">ABC科技有限公司 | 2020年1月 - 2020年12月</p>
+                    <ul>
+                        <li>领导团队将原有单体应用重构为微服务架构，使用Spring Boot和Docker</li>
+                        <li>设计并实现了基于React和Redux的新前端，提高了页面加载速度50%</li>
+                        <li>集成支付网关和库存管理系统，实现实时库存更新和订单处理</li>
+                        <li>实施ElasticSearch优化搜索功能，使搜索速度提升200%</li>
+                        <li>项目完成后，网站日均订单量增加40%，系统稳定性显著提高</li>
+                    </ul>
+                </div>
+                <div class="project-item">
+                    <h3>移动端健康管理应用</h3>
+                    <p class="date">XYZ信息技术有限公司 | 2017年3月 - 2017年9月</p>
+                    <ul>
+                        <li>使用React Native开发跨平台移动应用，实现iOS和Android一致的用户体验</li>
+                        <li>设计并实现后端API，使用Node.js和Express，确保高并发处理能力</li>
+                        <li>集成可穿戴设备API，实现实时健康数据同步和分析</li>
+                        <li>实现端到端加密，确保用户健康数据的安全性和隐私保护</li>
+                        <li>应用上线三个月内用户增长率达到200%，获得多个行业奖项</li>
+                    </ul>
+                </div>
+                <div class="project-item">
+                    <h3>智能家居控制系统</h3>
+                    <p class="date">个人项目 | 2019年5月 - 2019年8月</p>
+                    <ul>
+                        <li>设计并开发了基于树莓派的智能家居控制系统，使用Python和Flask</li>
+                        <li>实现了语音控制功能，集成Google Assistant API</li>
+                        <li>开发移动应用控制界面，使用Flutter实现跨平台兼容</li>
+                        <li>使用MQTT协议实现设备间的实时通信，确保低延迟控制</li>
+                        <li>项目在GitHub上获得500+星标，并被多个智能家居爱好者社区采用</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section>
+                <h2>教育背景</h2>
+                <div class="education-item">
+                    <h3>计算机科学与技术 硕士学位</h3>
+                    <p class="date">清华大学 | 2013年9月 - 2015年6月</p>
+                    <p>主修课程：高级算法、分布式系统、机器学习、高级数据库系统</p>
+                </div>
+                <div class="education-item">
+                    <h3>计算机科学与技术 学士学位</h3>
+                    <p class="date">北京大学 | 2009年9月 - 2013年6月</p>
+                    <p>主修课程：数据结构、算法分析、操作系统、软件工程、计算机网络</p>
+                </div>
+            </section>
+            
+            <section>
+                <h2>证书与成就</h2>
+                <table>
+                    <tr>
+                        <th>证书/奖项</th>
+                        <th>颁发机构</th>
+                        <th>获得日期</th>
+                    </tr>
+                    <tr>
+                        <td>AWS Certified Solutions Architect - Professional</td>
+                        <td>Amazon Web Services</td>
+                        <td>2021年3月</td>
+                    </tr>
+                    <tr>
+                        <td>Google Cloud Professional Cloud Architect</td>
+                        <td>Google Cloud</td>
+                        <td>2020年11月</td>
+                    </tr>
+                    <tr>
+                        <td>Certified Kubernetes Administrator (CKA)</td>
+                        <td>Cloud Native Computing Foundation</td>
+                        <td>2019年8月</td>
+                    </tr>
+                    <tr>
+                        <td>最佳技术创新奖</td>
+                        <td>中国软件开发者大会</td>
+                        <td>2018年5月</td>
+                    </tr>
+                </table>
+            </section>
+            
+            <section>
+                <h2>语言能力</h2>
+                <ul>
+                    <li>中文（母语）</li>
+                    <li>英语（流利，TOEFL 110分）</li>
+                    <li>日语（中级，JLPT N2）</li>
+                </ul>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
